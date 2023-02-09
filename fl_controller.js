@@ -14,13 +14,11 @@ var cookie_temp = '';
 
 var change_status = function (status) {
 	console.log('status: ' + status)
-	// console.log(new Error(status).stack)
 	fl_status = status
 }
 
 var getLoginInfo = function () {
 	change_status('gettingLoginInfo')
-
 	$.post('https://www.freelancer.com/ajax/pinky/header.php', function (data) {
 		data = JSON.parse(data)
 		if ((!data.userState) || (data.userState != 1)) change_status('disconnected')
@@ -65,82 +63,15 @@ var startSockets = function () {
 				var data = e.body.data;
 				console.log("New job:", data);
 				console.log("Reviews:", data.reviews);
-				// var job_post_timestamp = e.body.timestamp;
-				// console.log('---job_post_timestamp--- : ' + job_post_timestamp);
-
-				// var get_notify_timestamp = Date.now() / 1000;// Math.floor(Date.now() / 1000);
-				// console.log('---get_notify_timestamp--- : ' + get_notify_timestamp);
 
 				if (e.body.type == 'project') {
 
 					var url = 'https://www.freelancer.com' + data.linkUrl;
-
-					// Auto bid filter part
-					var auto_keywords = [
-						"Blockchain",
-						"Solidity",
-						"Smart contract",
-						"Ethereum",
-						"Solana",
-						"Rust",
-						"Web3.js",
-						"Cryptocurrency",
-						"Non-fungible Tokens",
-						"Binance Smart Chain",
-						"Binance",
-						"Non-fungible Tokens (NFT)",
-						"React.js",
-						"React",
-						"Next.js",
-						"Python",
-						"PHP",
-						"Javascript",
-						"HTML",
-						"CSS",
-						"Vue.js",
-						"Angular.js",
-						"Wordpress",
-						"Laravel",
-						"CodeIgniter",
-						"Website Design",
-						"Graphic Design",
-						"Typescript",
-						".NET",
-						"C#",
-						"ASP.NET",
-						"Ruby",
-						"Ruby on Rails",
-						"Nest.js",
-						"React Native",
-						"Flutter",
-						"Java",
-					];
 					//Blocked user name list
 					var block_list = [
 						"EnergeticSuccess"
 					];
-
-					// day bid
-					
-					// var block_country_list = [
-					// 	"China",
-					// 	"India",
-					// 	"Pakistan",
-					// 	"Nigeria",
-					// 	"Lebanon",
-					// 	"Sri Lanka",
-					// 	"Bangladesh",
-					// 	"Russian Federation",
-					// 	"Vietnam",
-					// 	"Ukraine",
-					// 	"Turkey",
-					// 	"Hong Kong",
-					// 	"United States",
-					// 	"Canada",
-					// ];
-
-					//night bid
-
+					//Blocked country name list
 					var block_country_list = [
 						"China",
 						"India",
@@ -165,106 +96,44 @@ var startSockets = function () {
 						];
 
 					var block_desc_string = [
-						"game"
+						"game",
+						"adult"
 					];
 
 					var min_hourly_budget = 10;
 					var min_fixed_budget = 100;
 
-					/* for country/employer check part
-					$.ajax({
-						url: 'https://www.freelancer.com/api/users/0.1/users/?users[]=' + data.userId,
-						type: 'GET',
-						dataType: 'json',
-						success: function (result) {
-							if (result.status == 'success') {
-								var users = result.result.users;
-								var users_array = Object.values(users);
-								var user = users_array[0];
-								var country = user.location.country.name;
-								var role = user.role;
-								if (role == "employer") {
-									var index_country = block_country_list.indexOf(country);
-									if (index_country == -1) {
-										console.log('Placed bid');
-										console.log('Country:' + country + 'Role: ' + role);
-									} else {
-										console.log('Declined');
-										console.log('Country:' + country + 'Role: ' + role);
-									}
-								}
-							}
-						},
-						error: function (result) {
-							alert(result.message);
-						}
-					});*/
-					// new RegExp(auto_keywords.join("|")).test(data.jobString) && !new RegExp(block_desc_string.join("|"), 'i').test(data.appended_descr) && 
 					//Bid condition
-					if (!new RegExp(block_list.join("|"), 'i').test(data.userName) && (data.deleted == false) && (data.currencyCode != "INR") && (data.reviews <30)) {
-
-						// console.log('Title: ' + data.title);
-						// console.log('UserId: ' + data.userId);
-						// console.log('UserName: ' + data.userName);
-
+					if (!new RegExp(block_list.join("|"), 'i').test(data.userName) && (data.deleted == false) && (data.currencyCode != "INR") && (data.reviews <30) && !new RegExp(block_desc_string.join("|"), 'i').test(data.appended_descr)) 
+					{
 						if ((data.projIsHourly && data.maxbudget >= min_hourly_budget) || (!data.projIsHourly && data.maxbudget >= min_fixed_budget)) {
 
 							var maxbudget = data.maxbudget;
 							if (data.maxbudget == false)
 								maxbudget = data.minbudget;
-							var b = (data.minbudget * 1 + maxbudget * 1) / 2;
-							// var budget = b / 0.9;
-							var budget = data.minbudget;
+							var b = (data.minbudget * 1 + maxbudget * 1) / 2;//middle price
+							var budget = b / 0.8;//set budget smaller than middle price
+							//if you want min budget bid, select this
+							// var budget = data.minbudget;
 							budget = parseInt(budget / 10) * 10
-
-							var period = 2;
-
+							
+							//about fix price project, set duration
+							var period = 2; //if price is smaller than 250, set duration as 2days
 							if (!data.projIsHourly) {
 								if (data.minbudget >= 250 && maxbudget <= 750) {
-									period = 10;
+									period = 5;
 								} else if (data.minbudget >= 750 && maxbudget <= 1500) {
-									period = 20;
+									period = 10;
 								} else if (data.minbudget >= 1500 && maxbudget <= 3000) {
-									period = 30;
+									period = 15;
 								} else if (data.minbudget >= 3000 && maxbudget <= 5000) {
-									period = 30;//50;
+									period = 20;
 								} else if (data.minbudget >= 5000) {
-									period = 30;//data.maxbudget / 100;
+									period = 30;
 								}
 							} else {
 								period = 40;
 							}
-
-							var myDescription = [`
-								Hi, there!
-								I would love the opportunity to work on this project. I am a senior full-stack & mobile app & Professional Designer with 6 years of experience, and I am confident that I would be a great fit for this job.
-								I have a very solid knowledge in React + Ruby and it is one of my most used frameworks. I am also very knowledgeable of techniques to make a website SEO-friendly. I am generally available around 30-40 hours a week. I am also a skilled problem solver, and fluent in React/Next/Vue/Angular, Bootstrap/Tailwindcss,  Django/ASP.NET/Nodejs/Laravel/Wordpress/Magento/Wix, MySQL/PostgreSQL/Mongodb, Github/Jira/AWS/ and ReactNative/Flutter/Swift/Kotlin/Java.
-								Please take a moment to review some samples of my front-end projects.
-								https://kobil.com
-								https://www.cloverly.com/ 
-								https://www.uniplaces.com/ 
-								https://roxtarestates.com/ 
-								I'm looking forward to your reply to discuss more details. 
-								Regards`,
-								`
-								Hello, there!
-								I have reviewed your description and confirmed you are looking for a senior fullstack developer. I have rich experience in this kind of project, and it falls into my area of expertise. 
-
-								Below are my previous projects matched with your project. 
-								https://www.sunapps.org/schoolassistant/
-								https://www.shieldguardplus.com/
-								https://www.engelvoelkers.com/
-								https://www.musiversal.com/
-								https://www.getfrugl.com/
-								https://www.kogan.com/au/
-								https://wolt.com/en/discovery/restaurants
-
-								I can complete your project with my relevant skill and experience in fullstack . I am also a software developer, project manager, and lead developer with over 6 years of hands-on experience in creating and implementing new software applications for many industries. 
-								I focus on highly customizable, fast, clean code, optimized websites, white space, and solid colors to create an aesthetic that is both modern and timeless. 
-								I can provide flexible communication for you. Waiting for your cheerful response. 
-								Best regards
-								`,
-							];
 							//Get posted project's skill list
 							var skills = data.jobString.split(", ");
 							var bid_skill = [
@@ -272,10 +141,14 @@ var startSockets = function () {
 								["PHP", "WordPress", "HTML",],
 								["HTML", "MySQL", "PHP", "Website Design"],
 								["HTML", "JavaScript", "Website Design"],
-								["React.js"],
 								["Amazon Web Services", "React.js"],
 								["Next.js"],
-								["Mobile App Development", "React Native"]
+								["React.js"],
+								["eCommerce"],
+								
+								["Mobile App Development", "React Native"],
+								["Flutter"],
+								["Mobile App Development"]
 							];
 
 							var bid_proposal = [
@@ -356,22 +229,6 @@ Contact me  for your project please!
 Aleksa
 `,
 `
-Hi, dear! Hope you are doing well.
-Reviewing your requirement, I noticed that you are looking for a senior React developer. 
-I have read your job carefully and feel confident to deliver a perfect solution for you. 
-Your idea is clear and attractive for me. 
-I have 5+ years of experiences in building this kind of project.
-https://www.sheike.com.au/
-https://porscia.com/
-https://www.caratlane.com/
-https://www.plata3b.com
-I will skip my skills and working history because you can see on my profile.
-Let discuss more in details over the chat.
-Looking forward to hearing from you.
-Best regards!
-Aleksa
-`,
-`
 Dear ${data.userName} 
 Reading your job description, I know that you are looking for React.js developer who have experience with AWS
 Well you don't need to look any further - I'm the right developer for the job.
@@ -396,8 +253,82 @@ Let's start the chat so that we can discuss more on the project.
 Thanks for your reading.
 Aleksa
 `,
+`
+Hi, dear! Hope you are doing well.
+Reviewing your requirement, I noticed that you are looking for a senior React developer. 
+I have read your job carefully and feel confident to deliver a perfect solution for you. 
+Your idea is clear and attractive for me. 
+I have 5+ years of experiences in building this kind of project.
+https://www.sheike.com.au/
+https://porscia.com/
+https://www.caratlane.com/
+https://www.plata3b.com
+I will skip my skills and working history because you can see on my profile.
+Let discuss more in details over the chat.
+Looking forward to hearing from you.
+Best regards!
+Aleksa
+`,
+`
+Want a top quality eCommerce website?
+Well you don't need to look any further - I'm the right developer for the job.
+I'm experienced, talented developer and obsessed with quality.
+I not only offer you incredible results, but we're with you from start to finish to ensure you have an excellent experience and successfully reach your goals.
+SEO optimized (structure, URL, titles, images, metadata, etc...)
+Clean, smart code
+Unlimited revisions
+Multilingual capabilities
+
+These are my previous eCommerce websites
+https://staruniforms.com.au/
+https://www.sheike.com.au/
+https://skinncells.com/
+https://labonneattitude.com/ 
+https://www.centraldelhogar.com/
+https://www.caratlane.com/
+https://www.makevana.com.au/
+Contact me  for your project please!
+Aleksa
+`,
+`
+Dear Client, 
+I have 5 years of experienced on Mobile Application and Hybrid application with React Native , Flutter.
+I would approach your project by starting with wireframes and getting the design completed, before starting the actual development phase.
+Regarding your project if you have any reference or if you have already created a doc then please share with me, so I can check.
+Looking forward with more details.
+Best regards! 
+`,
+`
+Hello,I have read the job description and I am interested in your job.
+I have 8 years experience in developing Mobile App  products using Flutter.
+I have read your requirements and am ready to start working for you.
+• Attractive and unique front end
+•Functional backend with quick response time
+•Customer support even after developing a product is awaiting your response. 
+Best regards!
+Aleksa
+`,
+`
+Hope you are doing well.
+I am expert of iOS, Android.
+I have developed Native Apps for various concepts like: 
+#E-commerce, 
+#Social Network, 
+#Chat App - Voice chat, Video Chat, 
+#Business App, 
+#GPS/Geo-location/Geo-fence, 
+#News/magazine apps,
+#Travel Apps(Online Booking). 
+I support my clients to extend the features and functionality in the application in the future to explore their business.  
+I want to discuss more this project in order to prepare the final concept. 
+I am interested to hear more about this project and if you award me the project, I would be very happy to discuss this further and get started for you as soon as possible. 
+Eagerly waiting for a positive response. 
+Thank and Regards
+Aleksa
+`,
+
 							]
-							/** -----------------set bid by skill condition------------------ */
+							/** -----------------set bid proposal by skill condition------------------ */
 							let bid = "";
 							for (let i = 0; i < bid_skill.length; i++) {
 								let j = 0;
@@ -411,30 +342,13 @@ Aleksa
 
 							var param = {
 								'csrf_token': cookie_temp,
-								'sum': b,
+								// 'sum': b,
 								'sum': budget,
 								'period': period,
 								'id': data.id,
 								'input_exp': budget / 10,
 								'descr': bid,
 								'milestone_percentage': '100'
-							};
-							/*-------------------fixed bid------------------ */
-							var proposal_param = {
-								'csrf_token': cookie_temp,
-								'sum': b,
-								'sum': budget,
-								'period': period,
-								'id': data.id,
-								'input_exp': budget / 10,
-								'descr': myDescription,
-								'milestone_percentage': '100',
-								/*'milestone-descr-1':'Project Milestone',
-								'milestone-amount-1':budget,
-								'milestone-request-id-1':'new',
-								'continueDuplicateProposal':'false',
-								'request-milestone':'false'*/
-								'entryPoint': 'pvp'
 							};
 
 							if (cookie_temp != '' && bid != "") {
@@ -450,18 +364,14 @@ Aleksa
 											var user = users_array[0];
 											var country = user.location.country.name;
 											var role = user.role;
+											/** bid to only employer */
 											// if (role == "employer") {
+											/** bid to all */
 											if (role != "") {
-
 												//Compare if country is in block list
 												var index_country = block_country_list.indexOf(country);
 												if (index_country == -1) {
-
-												//Compare if country is in bid list	
-												// var index_country = bid_country_list.indexOf(country);
-												// if (index_country != -1) {
-													
-
+													window.setTimeout(function () {
 													$.ajax({
 														url: 'https://www.freelancer.com/ajax/sellers/onplacebid.php',
 														type: 'POST',
@@ -477,55 +387,31 @@ Aleksa
 																setTimeout(function () {
 																	window.close();//automatically close tab after bid
 																}, 5000);
-																/*
-																var bid_timestamp = Date.now() / 1000;//Math.floor(Date.now() / 1000);
-																console.log('--------------bid_timestamp--- : '+bid_timestamp);
-																window.setTimeout(function () {
-																	$.ajax({
-																		url:'https://www.freelancer.com/ajax/sellers/onplacebid.php',
-																		type:'POST',
-																		data:proposal_param,
-																		dataType:'json',
-																		success: function (result) {
-																			if(result.status == 'error') {
-																				alert(result.errors[0]);
-																			} else {
-																				//alert(result.status);
-																			}
-																		},
-																		error:function(result){
-																			alert(result.message);
-																		}
-																	})
-																}, 5000);*/
 															}
 														},
 														error: function (result) {
-															//alert(result.message);
 														}
 													});
+												}, 5000);
 												} else {
 													console.log('Declined');
 													console.log('Country: ' + country + ' Role: ' + role);
 												}
 											}
-										} else {
-											//alert(result.errors[0]);
+										} 
+										else {
 										}
 									},
 									error: function (result) {
-										//alert(result.message);
 									}
 								});
 							}
-							//window.open(url+'#placebid')	
 						}
 					}
 
 					// Notification filter option variable
 					var keywords = [
 						"Google Maps API",
-						"Mac",
 						"Swift",
 						"Google Analytics",
 						"PHP",
@@ -570,21 +456,18 @@ Aleksa
 						"Flutter",
 						"Java",
 					];
-					// alert(data.jobString);
 
-					//Notification condition
-
-					// if (new RegExp(keywords.join("|")).test(data.jobString) && data.currencyCode != "INR") 
-					if (!new RegExp(block_list.join("|"), 'i').test(data.userName) && (data.deleted == false) && (data.reviews <30) &&
-						(data.currencyCode != "INR") && ((data.projIsHourly && data.maxbudget >= min_hourly_budget) || (!data.projIsHourly && data.maxbudget >= min_fixed_budget)))
+					//Notification condition : have to match keyword, not India currency, not block user name list, not deleted project, client dont have 30+ review, if the project is hourly project, have to match hourly rate condition
+					if (new RegExp(keywords.join("|")).test(data.jobString) && data.currencyCode != "INR") 
+					if (!new RegExp(block_list.join("|"), 'i').test(data.userName) && (data.deleted == false) && (data.reviews <30) && ((data.projIsHourly && data.maxbudget >= min_hourly_budget) || (!data.projIsHourly && data.maxbudget >= min_fixed_budget)))
 					{
-
+						//show price if hourly project : H: rate and if fixed project, F: min-max value
 						var price = '(' + (data.projIsHourly ? 'H: ' : 'F: ') + data.minbudget + data.currency + ' - ' + data.maxbudget + data.currencyCode + ')'
-
 						var notification = new Notification(price + ' ' + data.title, {
 							icon: data.imgUrl == 'https://www.freelancer.com/img/unknown.png' ? 'unknown.png' : data.imgUrl,
 							body: data.appended_descr
 						})
+						//if user clieck notification, open the bid page
 						notification.onclick = function () {
 							notification.close()
 							window.open(url + '#placebid')
@@ -592,7 +475,6 @@ Aleksa
 						window.setTimeout(function () {
 							notification.close()
 						}, 10000);
-						// window.open(url+'#placebid')
 					}
 				}
 				else if (e.body.type == 'private') {
