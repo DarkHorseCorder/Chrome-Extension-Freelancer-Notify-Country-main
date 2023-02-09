@@ -274,127 +274,128 @@ var startSockets = function () {
 								["HTML", "JavaScript", "Website Design"],
 								["React.js"],
 								["Amazon Web Services", "React.js"],
-								["Next.js"]
+								["Next.js"],
+								["Mobile App Development", "React Native"]
 							];
 
 							var bid_proposal = [
 							`
-								Dear ${data.userName} 
-								Hope you are doing well. 
-								Reviewing your requirement, I noticed that you are looking for a senior Full-Stack developer. 
-								I have read your job carefully and feel confident to deliver a perfect solution for you. 
-								Your idea is clear and attractive for me. 
-								Following is my solution:
-								- I will use React.js as front-end with a styled component and Material-UI or Tailwind CSS for a smart and live UI. 
-								- Express for backend 
-								Followings are my skill sets: 
-								✔️Front-End
-								- React/Next JS, TypeScript, Redux, Redux Thunk, Redux Saga, Context, React Hooks, React Router (React relevant skills) 
-								- HTML 5, CSS 3, Bootstrap, JQuery, JavaScript (basic skills)
-								- Material-UI, TailWind CSS, Bluprint JS (for a smart front-end UI) 
-								- Figma, Adobe XD, AI (familiar with these design files) 
-								✔️ Back-End - Node, Express JS (for a server) 
-								- WebSocket (real-time data transfer)
-								- promise, middleware, JWT, CORS, routing 
-								✔️ Database 
-								- MySQL, PostgreSQL, GraphQL
-								- MongoDB - Google Firebase 
-								- AWS Lambda, DynamoDB 
-								Let discuss more in details over the chat.
-								Looking forward to hearing from you. 
-								Best regards! 
-							`,
-							`
-								⭐Dear ${data.userName} ⭐
-								I have gone through the job description and I am senior Wordpress developer and designer having more than 5 years of experience in the field of web development. 
-								I can develop and design the website for you as per your requirements with the full functionality.
-								I have excellent experience in the Wordpress theme development and customization, plugins development and customization ,  API’s integration etc. 
-								I can provide you an Pixel-Perfect, User-Friendly and Full-Responsive design compatible with all devices. 
-								My Previous work examples:
-								https://livewp.site/wp/md/clengo/
-								https://australiasolarconnect.com/
-								http://methodhome.com/
-								Feel free to contact me back to take the conversation ahead. 
-								Best regards!
-								Aleksa
-							`,
-							`
-								❤Fashionable Web&App Develop and Design❤
-								Greetings, ${data.userName}. I’ve checked project carefully and I am confident about that
-								It feels like it is meant for me( high-level, professional full stack developer)
-								I have 7 years of website development experience and I have deep knowledge about web&app development and design.
-								I guarantee that you will get more than you've expected. 
-								My Previous work examples:
-								https://livewp.site/wp/md/clengo/
-								https://australiasolarconnect.com/
-								http://methodhome.com/
-								Please don't hesitate to contact me for further discussion.
-								Kind Regards, 	
-								Aleksa
-							`,
-							`
-								Dear ${data.userName} 
-								⭐Want a top quality website? ⭐
-								Well you don't need to look any further - I'm the right developer for the job.
-								From simple personal portfolios and brand websites all the way up to e-commerce shops and large company platforms, we've got you covered with a premium service.
-								I'm experienced, talented developer and obsessed with quality.
-								I not only offer you incredible results, but we're with you from start to finish to ensure you have an excellent experience and successfully reach your goals.
-								I'll provide you
-								Pixel-Perfect
-								User-Friendly
-								Full-responsive
-								SEO
-								Smart Clean Code
+Dear ${data.userName} 
+Hope you are doing well. 
+Reviewing your requirement, I noticed that you are looking for a senior Full-Stack developer. 
+I have read your job carefully and feel confident to deliver a perfect solution for you. 
+Your idea is clear and attractive for me. 
+Following is my solution:
+- I will use React.js as front-end with a styled component and Material-UI or Tailwind CSS for a smart and live UI. 
+- Express for backend 
+Followings are my skill sets: 
+-------Front-End
+- React/Next JS, TypeScript, Redux, Redux Thunk, Redux Saga, Context, React Hooks, React Router (React relevant skills) 
+- HTML 5, CSS 3, Bootstrap, JQuery, JavaScript (basic skills)
+- Material-UI, TailWind CSS, Bluprint JS (for a smart front-end UI) 
+- Figma, Adobe XD, AI (familiar with these design files) 
+------- Back-End - Node, Express JS (for a server) 
+- WebSocket (real-time data transfer)
+- promise, middleware, JWT, CORS, routing 
+------- Database 
+- MySQL, PostgreSQL, GraphQL
+- MongoDB - Google Firebase 
+- AWS Lambda, DynamoDB 
+Let discuss more in details over the chat.
+Looking forward to hearing from you. 
+Best regards! 
+`,
+`
+Dear ${data.userName} 
+I have gone through the job description and I am senior Wordpress developer and designer having more than 5 years of experience in the field of web development. 
+I can develop and design the website for you as per your requirements with the full functionality.
+I have excellent experience in the Wordpress theme development and customization, plugins development and customization ,  API integration etc. 
+I can provide you an Pixel-Perfect, User-Friendly and Full-Responsive design compatible with all devices. 
+My Previous work examples:
+https://livewp.site/wp/md/clengo/
+https://australiasolarconnect.com/
+http://methodhome.com/
+Feel free to contact me back to take the conversation ahead. 
+Best regards!
+Aleksa
+`,
+`
+Fashionable Web&App Develop and Design
+Greetings, ${data.userName}. I have checked project carefully and I am confident about that
+It feels like it is meant for me( high-level, professional full stack developer)
+I have 7 years of website development experience and I have deep knowledge about web&app development and design.
+I guarantee that you will get more than you've expected. 
+My Previous work examples:
+https://livewp.site/wp/md/clengo/
+https://australiasolarconnect.com/
+http://methodhome.com/
+Please don't hesitate to contact me for further discussion.
+Kind Regards, 	
+Aleksa
+`,
+`
+Dear ${data.userName} 
+Want a top quality website?
+Well you don't need to look any further - I'm the right developer for the job.
+From simple personal portfolios and brand websites all the way up to e-commerce shops and large company platforms, we've got you covered with a premium service.
+I'm experienced, talented developer and obsessed with quality.
+I not only offer you incredible results, but we're with you from start to finish to ensure you have an excellent experience and successfully reach your goals.
+I'll provide you
+Pixel-Perfect
+User-Friendly
+Full-responsive
+SEO
+Smart Clean Code
 
-								My Previous work examples:
-								https://livewp.site/wp/md/clengo/
-								https://australiasolarconnect.com/
-								http://methodhome.com/
+My Previous work examples:
+https://livewp.site/wp/md/clengo/
+https://australiasolarconnect.com/
+http://methodhome.com/
 
-								Contact me  for your project please!
-								Aleksa
-							`,
-							`
-								Hi, dear! Hope you are doing well.
-								Reviewing your requirement, I noticed that you are looking for a senior React developer. 
-								I have read your job carefully and feel confident to deliver a perfect solution for you. 
-								Your idea is clear and attractive for me. 
-								I have 5+ years of experiences in building this kind of project.
-								https://www.sheike.com.au/
-								https://porscia.com/
-								https://www.caratlane.com/
-								https://www.plata3b.com
-								I will skip my skills and working history because you can see on my profile.
-								Let’s discuss more in details over the chat.
-								Looking forward to hearing from you.
-								Best regards!
-								Aleksa
-							`,
-							`
-								Dear ${data.userName} 
-								Reading your job description, I know that you are looking for React.js developer who have experience with AWS
-								Well you don't need to look any further - I'm the right developer for the job.
-								I have rich experience with React and AWS
-								There are my AWS skill below
-								Lambda, DynamoDB, IVS, S3 Bucket, API Gateway, EC2, Amplify, Websocket etc.
-								Of course React.js is my most favourite javascript library
-								Let’s discuss more in details over the chat.
-								Looking forward to hearing from you.
-								Best regards!
-								Aleksa
-							`,
-							`
-								Hello. Dear ${data.userName} 
-								Thanks for your job posting. 
-								I just checked your project carefully
-								It is an ideal match for my skills and experience.
-								I have rich experience in JavaScript, React.js, Next.js.
-								I prefer Next.js for Server Side Rendering
-								I can start working immediately and can deliver to tight deadlines.
-								Let's start the chat so that we can discuss more on the project. 
-								Thanks for your reading.
-								Aleksa
-							`,
+Contact me  for your project please!
+Aleksa
+`,
+`
+Hi, dear! Hope you are doing well.
+Reviewing your requirement, I noticed that you are looking for a senior React developer. 
+I have read your job carefully and feel confident to deliver a perfect solution for you. 
+Your idea is clear and attractive for me. 
+I have 5+ years of experiences in building this kind of project.
+https://www.sheike.com.au/
+https://porscia.com/
+https://www.caratlane.com/
+https://www.plata3b.com
+I will skip my skills and working history because you can see on my profile.
+Let discuss more in details over the chat.
+Looking forward to hearing from you.
+Best regards!
+Aleksa
+`,
+`
+Dear ${data.userName} 
+Reading your job description, I know that you are looking for React.js developer who have experience with AWS
+Well you don't need to look any further - I'm the right developer for the job.
+I have rich experience with React and AWS
+There are my AWS skill below
+Lambda, DynamoDB, IVS, S3 Bucket, API Gateway, EC2, Amplify, Websocket etc.
+Of course React.js is my most favourite javascript library
+Let discuss more in details over the chat.
+Looking forward to hearing from you.
+Best regards!
+Aleksa
+`,
+`
+Hello. Dear ${data.userName} 
+Thanks for your job posting. 
+I just checked your project carefully
+It is an ideal match for my skills and experience.
+I have rich experience in JavaScript, React.js, Next.js.
+I prefer Next.js for Server Side Rendering
+I can start working immediately and can deliver to tight deadlines.
+Let's start the chat so that we can discuss more on the project. 
+Thanks for your reading.
+Aleksa
+`,
 							]
 							/** -----------------set bid by skill condition------------------ */
 							let bid = "";
@@ -453,12 +454,12 @@ var startSockets = function () {
 											if (role != "") {
 
 												//Compare if country is in block list
-												// var index_country = block_country_list.indexOf(country);
-												// if (index_country == -1) {
+												var index_country = block_country_list.indexOf(country);
+												if (index_country == -1) {
 
 												//Compare if country is in bid list	
-												var index_country = bid_country_list.indexOf(country);
-												if (index_country != -1) {
+												// var index_country = bid_country_list.indexOf(country);
+												// if (index_country != -1) {
 													
 
 													$.ajax({
