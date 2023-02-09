@@ -272,6 +272,9 @@ var startSockets = function () {
 								["PHP", "WordPress", "HTML",],
 								["HTML", "MySQL", "PHP", "Website Design"],
 								["HTML", "JavaScript", "Website Design"],
+								["React.js"],
+								["Amazon Web Services", "React.js"],
+								["Next.js"]
 							];
 
 							var bid_proposal = [
@@ -313,7 +316,7 @@ var startSockets = function () {
 								http://methodhome.com/
 								Feel free to contact me back to take the conversation ahead. 
 								Best regards!
-								Avramenko
+								Aleksa
 							`,
 							`
 								❤Fashionable Web&App Develop and Design❤
@@ -327,7 +330,7 @@ var startSockets = function () {
 								http://methodhome.com/
 								Please don't hesitate to contact me for further discussion.
 								Kind Regards, 	
-
+								Aleksa
 							`,
 							`
 								Dear ${data.userName} 
@@ -349,6 +352,48 @@ var startSockets = function () {
 								http://methodhome.com/
 
 								Contact me  for your project please!
+								Aleksa
+							`,
+							`
+								Hi, dear! Hope you are doing well.
+								Reviewing your requirement, I noticed that you are looking for a senior React developer. 
+								I have read your job carefully and feel confident to deliver a perfect solution for you. 
+								Your idea is clear and attractive for me. 
+								I have 5+ years of experiences in building this kind of project.
+								https://www.sheike.com.au/
+								https://porscia.com/
+								https://www.caratlane.com/
+								https://www.plata3b.com
+								I will skip my skills and working history because you can see on my profile.
+								Let’s discuss more in details over the chat.
+								Looking forward to hearing from you.
+								Best regards!
+								Aleksa
+							`,
+							`
+								Dear ${data.userName} 
+								Reading your job description, I know that you are looking for React.js developer who have experience with AWS
+								Well you don't need to look any further - I'm the right developer for the job.
+								I have rich experience with React and AWS
+								There are my AWS skill below
+								Lambda, DynamoDB, IVS, S3 Bucket, API Gateway, EC2, Amplify, Websocket etc.
+								Of course React.js is my most favourite javascript library
+								Let’s discuss more in details over the chat.
+								Looking forward to hearing from you.
+								Best regards!
+								Aleksa
+							`,
+							`
+								Hello. Dear ${data.userName} 
+								Thanks for your job posting. 
+								I just checked your project carefully
+								It is an ideal match for my skills and experience.
+								I have rich experience in JavaScript, React.js, Next.js.
+								I prefer Next.js for Server Side Rendering
+								I can start working immediately and can deliver to tight deadlines.
+								Let's start the chat so that we can discuss more on the project. 
+								Thanks for your reading.
+								Aleksa
 							`,
 							]
 							/** -----------------set bid by skill condition------------------ */
@@ -478,27 +523,6 @@ var startSockets = function () {
 
 					// Notification filter option variable
 					var keywords = [
-						"Arduino",
-						"Unity 3D",
-						"Unity",
-						"Solidworks",
-						"AutoCAD Architecture",
-						"AutoCAD",
-						"Raspberry Pi",
-						"PLC",
-						"Microcontroller",
-						"PCB Layout",
-						"Electronics",
-						"Game Development",
-						"Mobile Phone",
-						"Android",
-						"iPhone",
-						"iPad",
-						"Objective C",
-						"Java",
-						"GPS",
-						"Android Wear SDK",
-						"App Developer",
 						"Google Maps API",
 						"Mac",
 						"Swift",
