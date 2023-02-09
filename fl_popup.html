@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery-2.1.1.min.js"></script> 
+    <script src="fl_popup.js"></script> 
+    <link rel=stylesheet href="bootstrap.min.css">
+    <link rel=stylesheet href="bootstrap-theme.min.css">
+    <link rel=stylesheet href="fl.css">
+
+</head>
+<body>
+
+
+    <img id="fl_logo" src="fl.png" style="display:none;">
+
+    <div id="message" style="display: none;"></div>
+
+    <div id="running" style="display:none;">
+        <h4>Getting Notifications</h4>
+        <div class="button_container"><button type="button" id="stop_button" class="btn btn-danger">Stop</button></div>
+    </div>
+
+    <div id="stopped" style="display: none;">
+        <h4>Stopped</h4>
+        <div class="button_container"><button type="button" id="start_button" class="btn btn-success">Start</button></div>
+    </div>
+
+    <form style="display: none" id="login_form" class="user-login-form default-form" action="https://www.freelancer.com/users/login_box.php?pinky=true" method="POST">
+    
+        <input class="fromHttps" type="hidden" name="fromHttps">
+        <input class="stayOnPage" id="stayOnPage" type="hidden" name="stayOnPage" value="false">
+        <input type="hidden" name="submitted" value="true">
+        
+        <h4>Login</h4>
+        <fieldset>
+                <li class="form-step">
+                    <input type="text" placeholder="Nome Utente o Email" name="username" maxlength="150" id="username" autocomplete="off">
+                </li>
+                <li class="form-step">
+                    <input type="password" placeholder="Password" name="passwd" maxlength="150" id="passwd" autocomplete="off">
+                </li>
+                <li class="form-step">
+                    <label for="loginpermanent">
+                        <input class="user-login-perm-checkbox" type="checkbox" name="savelogin" id="loginpermanent">
+                        Remember me
+                    </label>
+                </li>
+                <li class="form-step">
+                     <button id="login_btn" type="submit" class="btn btn-primary">Login</button>
+                </li>
+        </fieldset>
+    </form>
+
+
+</body>
+</html>
+
+
+
+

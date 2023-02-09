@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "Freelancer.com Notify-Country",
+  "short_name": "FL Notifier",
+  "description": "Gets global notifications of Freelancer.com job offers",
+  "author": "Filippo Zonta",
+  "version": "1.0",
+  "icons":{
+    "16": "fl16.png",
+    "48": "fl.png",
+    "128": "fl128.png"
+  },
+
+  "permissions": [
+    "https://www.freelancer.com/",
+    "http://www.freelancer.com/",
+    "https://freelancer.com/",
+    "http://freelancer.com/",
+    "cookies",
+    "notifications",
+    "activeTab",
+    "declarativeContent",
+    "storage"
+  ],
+  "background":{
+    "page": "fl_controller.html"
+  },
+  "browser_action": {
+    "default_icon": "fl.png",
+    "default_popup": "fl_popup.html"
+  }
+}
