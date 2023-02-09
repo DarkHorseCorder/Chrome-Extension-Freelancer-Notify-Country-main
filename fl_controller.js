@@ -236,87 +236,119 @@ var startSockets = function () {
 							}
 
 							var myDescription = [`
-Hi, there!
-I would love the opportunity to work on this project. I am a senior full-stack & mobile app & Professional Designer with 6 years of experience, and I am confident that I would be a great fit for this job.
-I have a very solid knowledge in React + Ruby and it is one of my most used frameworks. I am also very knowledgeable of techniques to make a website SEO-friendly. I am generally available around 30-40 hours a week. I am also a skilled problem solver, and fluent in React/Next/Vue/Angular, Bootstrap/Tailwindcss,  Django/ASP.NET/Nodejs/Laravel/Wordpress/Magento/Wix, MySQL/PostgreSQL/Mongodb, Github/Jira/AWS/ and ReactNative/Flutter/Swift/Kotlin/Java.
-Please take a moment to review some samples of my front-end projects.
-https://kobil.com
-https://www.cloverly.com/ 
-https://www.uniplaces.com/ 
-https://roxtarestates.com/ 
-I'm looking forward to your reply to discuss more details. 
-Regards`,
-`
-Hello, there!
-I have reviewed your description and confirmed you are looking for a senior fullstack developer. I have rich experience in this kind of project, and it falls into my area of expertise. 
+								Hi, there!
+								I would love the opportunity to work on this project. I am a senior full-stack & mobile app & Professional Designer with 6 years of experience, and I am confident that I would be a great fit for this job.
+								I have a very solid knowledge in React + Ruby and it is one of my most used frameworks. I am also very knowledgeable of techniques to make a website SEO-friendly. I am generally available around 30-40 hours a week. I am also a skilled problem solver, and fluent in React/Next/Vue/Angular, Bootstrap/Tailwindcss,  Django/ASP.NET/Nodejs/Laravel/Wordpress/Magento/Wix, MySQL/PostgreSQL/Mongodb, Github/Jira/AWS/ and ReactNative/Flutter/Swift/Kotlin/Java.
+								Please take a moment to review some samples of my front-end projects.
+								https://kobil.com
+								https://www.cloverly.com/ 
+								https://www.uniplaces.com/ 
+								https://roxtarestates.com/ 
+								I'm looking forward to your reply to discuss more details. 
+								Regards`,
+								`
+								Hello, there!
+								I have reviewed your description and confirmed you are looking for a senior fullstack developer. I have rich experience in this kind of project, and it falls into my area of expertise. 
 
-Below are my previous projects matched with your project. 
-https://www.sunapps.org/schoolassistant/
-https://www.shieldguardplus.com/
-https://www.engelvoelkers.com/
-https://www.musiversal.com/
-https://www.getfrugl.com/
-https://www.kogan.com/au/
-https://wolt.com/en/discovery/restaurants
+								Below are my previous projects matched with your project. 
+								https://www.sunapps.org/schoolassistant/
+								https://www.shieldguardplus.com/
+								https://www.engelvoelkers.com/
+								https://www.musiversal.com/
+								https://www.getfrugl.com/
+								https://www.kogan.com/au/
+								https://wolt.com/en/discovery/restaurants
 
-I can complete your project with my relevant skill and experience in fullstack . I am also a software developer, project manager, and lead developer with over 6 years of hands-on experience in creating and implementing new software applications for many industries. 
-I focus on highly customizable, fast, clean code, optimized websites, white space, and solid colors to create an aesthetic that is both modern and timeless. 
-I can provide flexible communication for you. Waiting for your cheerful response. 
-Best regards
-`,
-`
-Hello!
-I read your bid and I think I'm guy who you need.
-A Professional Full-Stack Web developer with four years of experience is here.
-I'm working very cheaply because I'm beginner on freelancer.
-I use these technologies to work in website front side :
-- React.js
-- Vue.js
-- Anglar JS
-- CRM
-- SCSS.
-These Technologies for backend :
-- PHP
-- Laravel
-- CodeIgniter
-- Node.js
-- Express.js
-- MySQL
-- MongoDB.
-I promise you that you will receive 100% successfully and nice job.
-If you interested please contact me for details.
-Best Regards.
-`,
-`
-Hi, Thanks for job posting.
-I am exciting since I had already developed the similar deliver app you want.
-With 5 years of experience in React Native development, I built robust and high-performance solutions for Media, E-commerce, Logistics, Social networking, and other domains.
-
-I am mastering the following technologies used with Flutter.
-Dart, Redux, Material Design, Firebase & Firebase Analytics.
-
-My Services with React Native:
-I build mobile platforms that are usable, no matter which device it is installed on. Whether it is iOS, Android, or cross-platform application, I always check that it works stably to ensure that the final product facilitates the clients’ profit growth.
-I always work through all the details and executes the design vision under the client's requirements.
-`];
+								I can complete your project with my relevant skill and experience in fullstack . I am also a software developer, project manager, and lead developer with over 6 years of hands-on experience in creating and implementing new software applications for many industries. 
+								I focus on highly customizable, fast, clean code, optimized websites, white space, and solid colors to create an aesthetic that is both modern and timeless. 
+								I can provide flexible communication for you. Waiting for your cheerful response. 
+								Best regards
+								`,
+							];
 							//Get posted project's skill list
 							var skills = data.jobString.split(", ");
 							var bid_skill = [
 								["React.js", "JavaScript", "Full Stack Development"],
-
+								["PHP", "WordPress", "HTML",],
+								["HTML", "MySQL", "PHP", "Website Design"],
+								["HTML", "JavaScript", "Website Design"],
 							];
 
 							var bid_proposal = [
 							`
-							Hello dear ****** ${data.userName} ****** , we read your project description carefully, and found our skills relevant on your project. Over the last 10 years, we have developed a lot of Websites and other software products using HTML5, CSS3, JavaScript, Bootstrap, Tailwind Css,  Php, Java, Scala, Scalatra, Spring boot. And I have experience in the following areas: Git, Gitlab, Bitbucket, Docker, AWS, Cloud Computing and Digital Ocean.
-							These are some of our past works.
-							https://gempad.app/
-							https://www.figma.com/file/4sebqwOq00EuMoTttOD6Gh/Vibes?node-id=0%3A1
-							https://www.silvercar.com/      
-							https://judiking88.bike/#home
-							We can modify applications implemented by other programmers , add new functionalities, solve existing issues, and also create new applications. Also if you have no idea or design about your project we can also support those not only development.
-							We are so interested on your project and I think you can get excellent result from me. Would like to have a brief chat or call with you for discussing your project soon.
-							Thanks. :)
+								Dear ${data.userName} 
+								Hope you are doing well. 
+								Reviewing your requirement, I noticed that you are looking for a senior Full-Stack developer. 
+								I have read your job carefully and feel confident to deliver a perfect solution for you. 
+								Your idea is clear and attractive for me. 
+								Following is my solution:
+								- I will use React.js as front-end with a styled component and Material-UI or Tailwind CSS for a smart and live UI. 
+								- Express for backend 
+								Followings are my skill sets: 
+								✔️Front-End
+								- React/Next JS, TypeScript, Redux, Redux Thunk, Redux Saga, Context, React Hooks, React Router (React relevant skills) 
+								- HTML 5, CSS 3, Bootstrap, JQuery, JavaScript (basic skills)
+								- Material-UI, TailWind CSS, Bluprint JS (for a smart front-end UI) 
+								- Figma, Adobe XD, AI (familiar with these design files) 
+								✔️ Back-End - Node, Express JS (for a server) 
+								- WebSocket (real-time data transfer)
+								- promise, middleware, JWT, CORS, routing 
+								✔️ Database 
+								- MySQL, PostgreSQL, GraphQL
+								- MongoDB - Google Firebase 
+								- AWS Lambda, DynamoDB 
+								Let discuss more in details over the chat.
+								Looking forward to hearing from you. 
+								Best regards! 
+							`,
+							`
+								⭐Dear ${data.userName} ⭐
+								I have gone through the job description and I am senior Wordpress developer and designer having more than 5 years of experience in the field of web development. 
+								I can develop and design the website for you as per your requirements with the full functionality.
+								I have excellent experience in the Wordpress theme development and customization, plugins development and customization ,  API’s integration etc. 
+								I can provide you an Pixel-Perfect, User-Friendly and Full-Responsive design compatible with all devices. 
+								My Previous work examples:
+								https://livewp.site/wp/md/clengo/
+								https://australiasolarconnect.com/
+								http://methodhome.com/
+								Feel free to contact me back to take the conversation ahead. 
+								Best regards!
+								Avramenko
+							`,
+							`
+								❤Fashionable Web&App Develop and Design❤
+								Greetings, ${data.userName}. I’ve checked project carefully and I am confident about that
+								It feels like it is meant for me( high-level, professional full stack developer)
+								I have 7 years of website development experience and I have deep knowledge about web&app development and design.
+								I guarantee that you will get more than you've expected. 
+								My Previous work examples:
+								https://livewp.site/wp/md/clengo/
+								https://australiasolarconnect.com/
+								http://methodhome.com/
+								Please don't hesitate to contact me for further discussion.
+								Kind Regards, 	
+
+							`,
+							`
+								Dear ${data.userName} 
+								⭐Want a top quality website? ⭐
+								Well you don't need to look any further - I'm the right developer for the job.
+								From simple personal portfolios and brand websites all the way up to e-commerce shops and large company platforms, we've got you covered with a premium service.
+								I'm experienced, talented developer and obsessed with quality.
+								I not only offer you incredible results, but we're with you from start to finish to ensure you have an excellent experience and successfully reach your goals.
+								I'll provide you
+								Pixel-Perfect
+								User-Friendly
+								Full-responsive
+								SEO
+								Smart Clean Code
+
+								My Previous work examples:
+								https://livewp.site/wp/md/clengo/
+								https://australiasolarconnect.com/
+								http://methodhome.com/
+
+								Contact me  for your project please!
 							`,
 							]
 							/** -----------------set bid by skill condition------------------ */
