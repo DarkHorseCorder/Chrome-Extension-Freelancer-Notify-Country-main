@@ -84,7 +84,6 @@ var startSockets = function () {
 						"Vietnam",
 						"Ukraine",
 						"Turkey",
-						"Hong Kong",
 					];
 					var bid_country_list = [
 						"United States",
@@ -137,23 +136,69 @@ var startSockets = function () {
 							//Get posted project's skill list
 							var skills = data.jobString.split(", ");
 							var bid_skill = [
+								["Blockchain", "React"],
+								["smart contract"],
+								["NFT"],
 								["React.js", "JavaScript", "Full Stack Development"],
-								["PHP", "WordPress", "HTML",],
+								["PHP", "WordPress", "HTML"],
+								["PHP", "Laravel"],
 								["HTML", "MySQL", "PHP", "Website Design"],
 								["HTML", "JavaScript", "Website Design"],
+								["HTML", "JavaScript", "PHP"],
 								["Amazon Web Services", "React.js"],
+								["Amazon Web Services", "JavaScript"],
+								["Angular", "JavaScript"],
 								["Next.js"],
 								["React.js"],
+								["Vue"],
 								["eCommerce"],
-								
+								["Laravel"],
+								["Website Design"],
 								["Mobile App Development", "React Native"],
 								["Flutter"],
 								["Mobile App Development"]
 							];
 
 							var bid_proposal = [
-							`
-Dear ${data.userName} 
+`
+~~Blockchain & MER,VN Stack & NFT Senior Developer~~
+Hello respected client! Thanks for posting. 
+I am a senior developer have 7+ years of experience in Blockchain, Ethereum(Solidity), Solana(Rust), NFT, and TradingView Chart with modern, trend technology such as React, Vue, and Node.js.
+I have seen your project's requirements carefully. I am ready to start your project immediately and I really can complete your project perfectly in a short period.
+As a solution:
+- Using MERN Stack for frontend
+- Solidity for smart contract, and integrate with website using web3.js
+Best regards!
+Aleksa
+`,
+
+`
+Hello, I read your requirement for building a smart contract. 
+I have already created many smart contracts on ETH and BSC. 
+I am a full stack developer having 5+ years of experience in Web/app/blockchain development. 
+-Chain : Ethereum, Solona, BSC, Polygon, Avalanche, Tron, Eldron
+ -Contract : Solidity, Rust + Hardhat, Truffle / Remix. (Open Zeppelin) 
+-Token : ERC-20, ERC-721, ERC-1155, BEP-2, BEP-20, BEP-721, TRC-20 
+My expertise includes Website Development, App development, Blockchain development, Ethereum, Bitcoin, Blockchain architecture, DAPPS, TRON, DEFI, Solidity, Smart contracts,  Polkadot, ICO, Tokens, and many more.
+Best Regards.
+Aleksa
+`,
+
+`
+Hello,   I have rich experience in developing the NFT projects. 
+For the last NFT projects, I was responsible for a leading developer from start to end. 
+I built ERC 721 Smart Contract and deployed it to the mainnet and the testnet using Truffle and Remix.
+And I built the front website for users to mint NFT and view NFT collections with React and web3.
+Additionally, 
+https://megaprimates.io/ 
+https://operahouse.online/ 
+https://www.creepz.co/#/
+I developed an AI script to generate 2k+ NFT collections as I have deep knowledge of Python and Javascript libraries.
+Best regards.
+Aleksa
+`,
+`
+Dear Client
 Hope you are doing well. 
 Reviewing your requirement, I noticed that you are looking for a senior Full-Stack developer. 
 I have read your job carefully and feel confident to deliver a perfect solution for you. 
@@ -179,7 +224,7 @@ Looking forward to hearing from you.
 Best regards! 
 `,
 `
-Dear ${data.userName} 
+Dear Client
 I have gone through the job description and I am senior Wordpress developer and designer having more than 5 years of experience in the field of web development. 
 I can develop and design the website for you as per your requirements with the full functionality.
 I have excellent experience in the Wordpress theme development and customization, plugins development and customization ,  API integration etc. 
@@ -193,8 +238,16 @@ Best regards!
 Aleksa
 `,
 `
+Hello, Laravel expert here. 
+I am familiar with Laravel and I have a lot of work experience in Laravel, Codeigniter, PHP, Wordpress and MySQL.
+I can start right away. I want to discuss this project in detail. 
+For more details, Chat with me please
+Best regards!
+Aleska
+`,
+`
 Fashionable Web&App Develop and Design
-Greetings, ${data.userName}. I have checked project carefully and I am confident about that
+Greetings,I have checked project carefully and I am confident about that
 It feels like it is meant for me( high-level, professional full stack developer)
 I have 7 years of website development experience and I have deep knowledge about web&app development and design.
 I guarantee that you will get more than you've expected. 
@@ -207,7 +260,7 @@ Kind Regards,
 Aleksa
 `,
 `
-Dear ${data.userName} 
+Dear Client
 Want a top quality website?
 Well you don't need to look any further - I'm the right developer for the job.
 From simple personal portfolios and brand websites all the way up to e-commerce shops and large company platforms, we've got you covered with a premium service.
@@ -229,7 +282,29 @@ Contact me  for your project please!
 Aleksa
 `,
 `
-Dear ${data.userName} 
+Dear Client
+Want a top quality website?
+Well you don't need to look any further - I'm the right developer for the job.
+From simple personal portfolios and brand websites all the way up to e-commerce shops and large company platforms, we've got you covered with a premium service.
+I'm experienced, talented developer and obsessed with quality.
+I not only offer you incredible results, but we're with you from start to finish to ensure you have an excellent experience and successfully reach your goals.
+I'll provide you
+Pixel-Perfect
+User-Friendly
+Full-responsive
+SEO
+Smart Clean Code
+
+My Previous work examples:
+https://livewp.site/wp/md/clengo/
+https://australiasolarconnect.com/
+http://methodhome.com/
+
+Contact me  for your project please!
+Aleksa
+`,
+`
+Dear Dear Client
 Reading your job description, I know that you are looking for React.js developer who have experience with AWS
 Well you don't need to look any further - I'm the right developer for the job.
 I have rich experience with React and AWS
@@ -242,11 +317,37 @@ Best regards!
 Aleksa
 `,
 `
-Hello. Dear ${data.userName} 
+Dear Dear Client
+Senior AWS Developer here
+Lambda, DynamoDB, IVS, S3 Bucket, API Gateway, EC2, Amplify, Websocket, SES etc.
+Of course JavaScript and TypeScript is my most favourite language
+I have 7 years of website development experience and I have deep knowledge about web&app development and design.
+I guarantee that you will get more than you've expected. 
+Please don't hesitate to contact me for further discussion.
+Let discuss more in details over the chat.
+Looking forward to hearing from you.
+Best regards!
+Aleksa
+`,
+`
+Hello, I just checked your project carefully.
+I have good experience to work with developing website using Angular 8, Node.js/Express JS, Mongo DB.
+As a 5 years of experience with software development, have worked in many project.
+Through reading your description, my experience will help you and your project. 
+If you are interest, Please let me know and discuss your project in detail. 
+Best wishes.
+Aleska
+`,
+`
+Hello. Dear Client 
 Thanks for your job posting. 
 I just checked your project carefully
 It is an ideal match for my skills and experience.
 I have rich experience in JavaScript, React.js, Next.js.
+https://www.metalpay.com/ 
+https://www.gawds.xyz/
+https://www.caratlane.com/ 
+https://www.joshrubietta.com/
 I prefer Next.js for Server Side Rendering
 I can start working immediately and can deliver to tight deadlines.
 Let's start the chat so that we can discuss more on the project. 
@@ -270,6 +371,18 @@ Best regards!
 Aleksa
 `,
 `
+Hello, I read your description carefully. 
+I have good experience to work with developing website using Vue.js, Nuxt.js and Node.js.
+Through reading your description, I'm sure that my experience will help you and your project.
+I finished similar works with what you mentioned in description.
+https://helixes.co/en/ 
+https://fastdox.co.uk/
+https://www.takearecess.com
+https://www.afritickets.com
+If you are interest, Please let me know and discuss your project in detail. 
+Best Regards
+`,
+`
 Want a top quality eCommerce website?
 Well you don't need to look any further - I'm the right developer for the job.
 I'm experienced, talented developer and obsessed with quality.
@@ -291,6 +404,25 @@ Contact me  for your project please!
 Aleksa
 `,
 `
+Hello, Respected Client. Laravel expert here. 
+I am familiar with Laravel and I have a lot of work experience in Laravel, Codeigniter, PHP, Wordpress and MySQL.
+I can start right away. 
+Which version of Laravel you want to use for your project?
+I want to discuss this project in detail. 
+For more details, Chat with me please
+Best regards!
+`,
+`
+Fashionable Web&App Develop and Design
+Greetings,  I have checked project carefully and I am confident about that
+It feels like it is meant for me( high-level, professional full stack developer)
+I have 7 years of website development experience and I have deep knowledge about web&app development and design.
+I guarantee that you will get more than you've expected. 
+Please don't hesitate to contact me for further discussion.
+Kind Regards, 
+Aleksa	
+`,
+`
 Dear Client, 
 I have 5 years of experienced on Mobile Application and Hybrid application with React Native , Flutter.
 I would approach your project by starting with wireframes and getting the design completed, before starting the actual development phase.
@@ -302,9 +434,9 @@ Best regards!
 Hello,I have read the job description and I am interested in your job.
 I have 8 years experience in developing Mobile App  products using Flutter.
 I have read your requirements and am ready to start working for you.
-• Attractive and unique front end
-•Functional backend with quick response time
-•Customer support even after developing a product is awaiting your response. 
+-Attractive and unique front end
+-Functional backend with quick response time
+-Customer support even after developing a product is awaiting your response. 
 Best regards!
 Aleksa
 `,
@@ -332,13 +464,15 @@ Aleksa
 							let bid = "";
 							for (let i = 0; i < bid_skill.length; i++) {
 								let j = 0;
-								for (j = 0; j < bid_skill[i].length; j++)
-									if (skills.indexOf(bid_skill[i][j]) == -1)
+								for (j = 0; j < bid_skill[i].length; j++){
+									if (skills.indexOf(bid_skill[i][j]) == -1){
 										break;
+									}
+								}
 								if (j != bid_skill[i].length) continue;
 								bid = bid_proposal[i];
 								break;
-							}
+							}1
 
 							var param = {
 								'csrf_token': cookie_temp,
@@ -384,12 +518,24 @@ Aleksa
 																window.open(url + '#placebid');
 																console.log('Placed bid');
 																console.log('Country: ' + country + ' Role: ' + role);
-																setTimeout(function () {
-																	window.close();//automatically close tab after bid
-																}, 5000);
+																// setTimeout(function () {
+																// 	window.close();//automatically close tab after bid
+																// }, 5000);
 															}
 														},
 														error: function (result) {
+															if(result.responseJSON.error.code == 'BID_TOO_EARLY')
+															{
+																console.log('Bid again');
+																window.setTimeout(function () {
+																	$.ajax({
+																		url: 'https://www.freelancer.com/ajax/sellers/onplacebid.php',
+																		type: 'POST',
+																		data: param,
+																		dataType: 'json'
+																	})
+																}, 10000)
+															}
 														}
 													});
 												}, 5000);
